@@ -952,7 +952,7 @@ class CLIPModel(CLIPPreTrainedModel):
 
     def __init__(self, config: CLIPConfig):
         super().__init__(config)
-
+        self._no_split_modules = []
         if not isinstance(config.text_config, CLIPTextConfig):
             raise ValueError(
                 "config.text_config is expected to be of type CLIPTextConfig but is of type"

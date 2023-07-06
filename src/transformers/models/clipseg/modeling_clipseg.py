@@ -1342,6 +1342,7 @@ class CLIPSegForImageSegmentation(CLIPSegPreTrainedModel):
 
     def __init__(self, config: CLIPSegConfig):
         super().__init__(config)
+        self._no_split_modules = []
 
         self.config = config
 

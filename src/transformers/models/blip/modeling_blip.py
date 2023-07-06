@@ -933,6 +933,7 @@ class BlipForConditionalGeneration(BlipPreTrainedModel):
 
     def __init__(self, config: BlipConfig):
         super().__init__(config)
+        self._no_split_modules = []
 
         self.vision_model = BlipVisionModel(config.vision_config)
 
