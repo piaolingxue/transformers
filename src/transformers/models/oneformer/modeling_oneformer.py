@@ -3037,6 +3037,7 @@ class OneFormerForUniversalSegmentation(OneFormerPreTrainedModel):
     def __init__(self, config: OneFormerConfig):
         super().__init__(config)
         self.model = OneFormerModel(config)
+        self._no_split_modules = []
 
         self.matcher = OneFormerHungarianMatcher(
             cost_class=config.class_weight,
